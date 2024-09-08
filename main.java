@@ -1,9 +1,10 @@
-import java.util.Random;
+
 import java.util.Scanner;
 
 import Bank.Database.CreatUser;
-import Bank.Database.NewUser;
+
 import Bank.Database.ViewDetails;
+import Bank.Database.AddMoney;
 import Bank.Database.Assets.*;
 
 
@@ -12,10 +13,10 @@ public class main {
    
         
         boolean flag = true;
-
         Colours colour = new Colours();
         CreatUser creatUser = new CreatUser();
         ViewDetails view = new ViewDetails();
+        AddMoney withdraw = new AddMoney();
         
 
         Scanner in = new Scanner(System.in);
@@ -48,6 +49,9 @@ public class main {
 
                 case 2:
                     view.viewUser();
+                    break;
+                case 4:
+                    withdraw.withdraw();
                     break;
 
                     default:

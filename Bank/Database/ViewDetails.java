@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.Scanner;
 
 import Bank.Database.Assets.*;
-import Bank.Database.*;
+
 
 public class ViewDetails {
     public static void viewUser() throws InterruptedException{
@@ -65,7 +65,7 @@ public class ViewDetails {
             stmt.close();
 
         } catch (Exception e) {
-            // TODO: handle exception
+            
             System.out.println(e);
         }
 
