@@ -8,9 +8,9 @@ import java.util.Scanner;
 import Bank.Database.Assets.*;
 
 
-public class AddMoney {
+public class Withdraw {
     
-    public static void  addMoney() throws InterruptedException{
+    public static void  withdraw() throws InterruptedException{
 
         Colours colour = new Colours();
         Scanner in = new Scanner(System.in);
@@ -53,7 +53,7 @@ public class AddMoney {
                 int amt = in.nextInt();
                 System.out.println();
 
-                int totalAmt = balanceAmt+amt;
+                int totalAmt = balanceAmt-amt;
 
                 updatestmt.setInt(1, totalAmt);
                 updatestmt.setInt(2, accNo);
@@ -61,7 +61,7 @@ public class AddMoney {
                 int rowsUpdated = updatestmt.executeUpdate();
 
                 if (rowsUpdated > 0) {
-                    System.out.println("Depositing");
+                    System.out.println("Withdrwing");
                     for (int i = 0; i < 10; i++) {
                         System.out.print(colour.GREEN + "**" + colour.RESET);
                         Thread.sleep(100);

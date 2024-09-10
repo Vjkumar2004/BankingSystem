@@ -4,6 +4,7 @@ import java.util.Scanner;
 import Bank.Database.CreatUser;
 
 import Bank.Database.ViewDetails;
+import Bank.Database.Withdraw;
 import Bank.Database.AddMoney;
 import Bank.Database.Assets.*;
 
@@ -16,7 +17,8 @@ public class main {
         Colours colour = new Colours();
         CreatUser creatUser = new CreatUser();
         ViewDetails view = new ViewDetails();
-        AddMoney withdraw = new AddMoney();
+        AddMoney addMoney = new AddMoney();
+        Withdraw withdraw = new Withdraw();
         
 
         Scanner in = new Scanner(System.in);
@@ -51,6 +53,10 @@ public class main {
                     view.viewUser();
                     break;
                 case 4:
+                    addMoney.addMoney();
+                    break;
+
+                case 5:
                     withdraw.withdraw();
                     break;
 
