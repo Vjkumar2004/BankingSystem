@@ -55,11 +55,8 @@ public class Withdraw {
 
                 int totalAmt = balanceAmt-amt;
 
-                updatestmt.setInt(1, totalAmt);
-                updatestmt.setInt(2, accNo);
-
                 int rowsUpdated = updatestmt.executeUpdate();
-
+            if(totalAmt > balanceAmt){
                 if (rowsUpdated > 0) {
                     System.out.println("Withdrwing");
                     for (int i = 0; i < 10; i++) {
@@ -69,8 +66,13 @@ public class Withdraw {
 
                     System.out.println();
                     System.out.println("Successfully deposited. New Balance: " + totalAmt);
-                } else {
-                    System.out.println("Failed to update balance.");
+
+                    updatestmt.setInt(1, totalAmt);
+                    updatestmt.setInt(2, accNo);
+                }
+             } else {
+                    System.out.println(colour.RED+"Failed to update balance."+colour.RESET);
+                    System.out.println("Please Try Again");
                 }
 
 
@@ -85,7 +87,7 @@ public class Withdraw {
             
         } catch (Exception e) {
             // TODO: handle exception
-            System.out.println(e);
+            System.out.println(colour.RED+"Invalid Balance and please check your balance"+colour.RESET);
             
         }
     }

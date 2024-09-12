@@ -53,8 +53,9 @@ public class ViewDetails {
                 System.out.println("Age :"+rs.getInt("age"));
                 System.out.println("Account Number :"+rs.getInt("accountNo"));
                 System.out.println("Balance :"+rs.getInt("balance"));
+                System.out.println("Phone Number :"+rs.getString("phoneNumber"));
                 System.out.println();
-                System.out.println("*****************");
+                System.out.println("***************************");
             }
             else{
                 System.out.println(color.RED+"Invalid accNo or password..."+color.RESET);

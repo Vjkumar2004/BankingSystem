@@ -36,6 +36,7 @@ public class main {
         System.out.println(colour.YELLOW+"4 -> Add Money"+colour.RESET);
         System.out.println(colour.YELLOW+"5 -> Withdraw Money.."+colour.RESET);
         System.out.println(colour.YELLOW+"6 -> Delete Account"+colour.RESET);
+        System.out.println(colour.YELLOW+"7 -> View Statement.."+colour.RESET);
 
         while(flag){
             System.out.println("________________________");

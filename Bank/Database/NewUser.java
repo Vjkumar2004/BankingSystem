@@ -4,12 +4,12 @@ import java.sql.*;
 
 public class NewUser {
 
-    public static void insert(String name,int age, int accountNo, int pass){
+    public static void insert(String name,int age, int accountNo, int pass, String phoneNumber){
         String url = "jdbc:mysql://localhost:3306/newuserDb";
         String username = "root";
         String password = "vijay2004";
 
-        String sql = "INSERT INTO newuserDetails (name , age , accountNo, pass, balance) VALUES (? , ? , ?, ?, ?)";
+        String sql = "INSERT INTO newuserDetails (name , age , accountNo, pass, balance, phoneNumber) VALUES (? , ? , ?, ?, ?, ?)";
 
         try(Connection connection = DriverManager.getConnection(url, username, password);
             PreparedStatement state = connection.prepareStatement(sql)){
@@ -18,6 +18,7 @@ public class NewUser {
                 state.setInt(3, accountNo);
                 state.setInt(4, pass);
                 state.setInt(5, 0);
+                state.setString(6, phoneNumber);
 
                 int rowsInsert = state.executeUpdate();
 
